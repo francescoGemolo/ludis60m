@@ -667,8 +667,8 @@
         display: none;
     }
 
-    .page-header hgroup p svg {
-        display: block;
+    .page-header hgroup p {
+        display: none;
         color: var(--accent-strong);
     }
 
