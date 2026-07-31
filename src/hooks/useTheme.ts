@@ -6,8 +6,19 @@ const THEME_STORAGE_KEY = 'ludis-focus-theme'
 const LIGHT_STATUS_BAR_COLOR = '#ffffff'
 const DARK_STATUS_BAR_COLOR = '#1e1815'
 
+function getInitialTheme(): ThemeMode {
+    try {
+        const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
+        if (stored === 'light' || stored === 'dark') return stored
+    } catch {
+        // Storage may be unavailable (e.g. private browsing); fall back to system preference.
+    }
+
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
+
 export function useTheme() {
-    const [theme, setTheme] = useState<ThemeMode>('light')
+    const [theme, setTheme] = useState<ThemeMode>(getInitialTheme)
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme)

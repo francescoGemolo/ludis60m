@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'SF Pro Rounded';
-    src: url('/src/assets/font/SF-Pro-Rounded-Medium.woff2') format('woff2');
+    src: url('/src/assets/fonts/SF-Pro-Rounded-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'SF Pro Rounded';
-    src: url('/src/assets/font/SF-Pro-Rounded-Semibold.woff2') format('woff2');
+    src: url('/src/assets/fonts/SF-Pro-Rounded-Semibold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: 'SF Pro Rounded';
-    src: url('/src/assets/font/SF-Pro-Rounded-Bold.woff2') format('woff2');
+    src: url('/src/assets/fonts/SF-Pro-Rounded-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -27,7 +27,7 @@
 
 @font-face {
     font-family: 'SF Pro Rounded';
-    src: url('/src/assets/font/SF-Pro-Rounded-Heavy.woff2') format('woff2');
+    src: url('/src/assets/fonts/SF-Pro-Rounded-Heavy.woff2') format('woff2');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -59,8 +59,8 @@
     --fuchsia-900: #701a75;
     --fuchsia-950: #4a044e;
 
-    --accent: var(--fuchsia-400);
-    --accent-strong: var(--fuchsia-500);
+    --accent: var(--fuchsia-500);
+    --accent-strong: var(--fuchsia-600);
     --accent-soft: var(--fuchsia-100);
     --accent-border: var(--fuchsia-200);
 
@@ -127,8 +127,8 @@
 :root[data-theme="dark"] {
     --neutral-50: #15110f;
     --neutral-100: #1c1714;
-    --neutral-200: #2a2320;
-    --neutral-300: #3a312c;
+    --neutral-200: #362d27;
+    --neutral-300: #4d4038;
     --neutral-400: #8d8076;
     --neutral-500: #a89c91;
     --neutral-600: #c2b7ac;
@@ -137,10 +137,10 @@
     --neutral-900: #f2ede6;
     --neutral-950: #f7f3ee;
 
-    --accent: #c98bc4;
-    --accent-strong: #e3a6da;
-    --accent-soft: #2c2129;
-    --accent-border: #3c2c37;
+    --accent: #e3a6da;
+    --accent-strong: #f3c2ed;
+    --accent-soft: #3a2233;
+    --accent-border: #5a354f;
 
     --break-strong: #5fc9b6;
     --break-soft: #152924;
@@ -157,7 +157,7 @@
     --surface: #1e1815;
     --bg: var(--neutral-50);
 
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .5);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, .6), 0 0 0 1px rgba(255, 255, 255, .04);
 }
 
 *,
@@ -182,7 +182,7 @@ body {
     padding: 0;
     overflow: hidden;
     font-family: var(--font-sans);
-    background: var(--surface);
+    background: var(--bg);
     color: var(--neutral-950);
     -webkit-tap-highlight-color: transparent;
     transition: background-color var(--transition-normal) var(--ease), color var(--transition-normal) var(--ease);
