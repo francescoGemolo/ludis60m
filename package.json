@@ -1,10 +1,10 @@
 {
-  "name": "pomodoro",
+  "name": "ludis60m",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://francescoGemolo.github.io/pomodoro-ts/",
+  "homepage": "https://francescogemolo.github.io/ludis60m/",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",

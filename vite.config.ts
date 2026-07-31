@@ -24,7 +24,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/pomodoro-ts/",
+  base: "/ludis60m/",
   resolve: {
     alias: {
       "lottie-web": "lottie-web/build/player/lottie_light",
