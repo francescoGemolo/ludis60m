@@ -1,32 +1,69 @@
-# React + TypeScript + Vite
+# Ludi's 60m
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A minimal Pomodoro-style focus timer, installable as a PWA. It cycles through focus and break sessions, tracks daily/weekly stats locally on your device, and remembers your theme and timer preferences between visits.
 
-Currently, two official plugins are available:
+**[Live demo →](https://francescogemolo.github.io/pomodoro-ts/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Focus → short break cycle, with a long break every 4th session
+- Session and streak tracking, persisted in `localStorage`
+- 7-day focus chart and all-time stats
+- Configurable focus / short break / long break durations
+- Light and dark theme, respecting the system preference on first load
+- Installable PWA with offline support (service worker precaching via `vite-plugin-pwa`)
+- Fully responsive layout for mobile, tablet and desktop
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the Oxlint configuration
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/) for tooling and bundling
+- [vite-plugin-pwa](https://vite-pwa-org.netlify.app/) for the service worker and manifest
+- [lottie-react](https://github.com/Gamote/lottie-react) for the cat animation
+- [oxlint](https://oxc.rs/) for linting
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Getting started
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The app runs at `http://localhost:5173` by default.
+
+### Scripts
+
+| Command            | Description                              |
+| ------------------ | ----------------------------------------- |
+| `npm run dev`       | Start the dev server                     |
+| `npm run build`      | Type-check and build for production      |
+| `npm run preview`     | Preview the production build locally     |
+| `npm run lint`       | Run oxlint                               |
+| `npm run typecheck`    | Run the TypeScript compiler in check mode |
+| `npm run deploy`      | Build and publish to GitHub Pages        |
+
+## Project structure
+
+```
+src/
+├── assets/
+│   ├── animations/     # Lottie animation data
+│   └── fonts/          # Self-hosted variable-weight font files
+├── components/         # UI components (one file per component)
+├── hooks/
+│   ├── usePomodoroTimer.ts   # Timer state, cycle logic, stats persistence
+│   └── useTheme.ts           # Light/dark theme state and persistence
+├── utils/
+│   └── dateKey.ts       # Date formatting helpers used for stats keys
+├── constants.ts         # Shared app-wide constants
+├── App.tsx              # Top-level layout and tab routing
+└── main.tsx              # App entry point
+```
+
+## Data & privacy
+
+All session history and preferences are stored locally in the browser via `localStorage` (`ludis-focus-history`, `ludis-focus-theme`). Nothing is sent to a server. Clearing your browser storage or using "Reset Stats" in the app permanently deletes this data.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
