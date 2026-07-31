@@ -66,4 +66,4 @@ All session history and preferences are stored locally in the browser via `local
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
