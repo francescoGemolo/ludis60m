@@ -2,7 +2,7 @@
 
 A minimal Pomodoro-style focus timer, installable as a PWA. It cycles through focus and break sessions, tracks daily/weekly stats locally on your device, and remembers your theme and timer preferences between visits.
 
-**[Live demo →](https://francescogemolo.github.io/pomodoro-ts/)**
+**[Live demo →](https://francescogemolo.github.io/ludis60m/)**
 
 ## Features
 
